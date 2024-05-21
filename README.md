@@ -1,8 +1,8 @@
-# Random Additions' Plugin for a server
+# Random Additions Plugin for a server
 
 ## Tutorial
 
-Here is a tutorial on github we used to begin with the plugin : https://gist.github.com/briangershon/7a009cad2a1e11a7b785e8b8bf6ada1a
+Here is a tutorial on github we used to begin with the plugin : https://gist.github.com/kangarko/456d9cfce52dc971b93dbbd12a95f43c
 
 ## Setup
 
