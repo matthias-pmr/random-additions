@@ -1,0 +1,4 @@
+name: random_additions
+version: '${project.version}'
+main: eu.pommeray.random_additions.Random_additions
+api-version: '1.20'
