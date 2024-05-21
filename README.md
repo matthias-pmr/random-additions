@@ -1,8 +1,9 @@
 # Random Additions Plugin for a server
 
-## Tutorial
+## Learning
 
-Here is a tutorial on github we used to begin with the plugin : https://gist.github.com/kangarko/456d9cfce52dc971b93dbbd12a95f43c
+Here is a tutorial on github we used to begin with the plugin: https://gist.github.com/kangarko/456d9cfce52dc971b93dbbd12a95f43c
+To use UnitTesting in our Project, we used: https://github.com/MockBukkit/MockBukkit?tab=readme-ov-file#adding-mockbukkit-via-maven
 
 ## Setup
 
