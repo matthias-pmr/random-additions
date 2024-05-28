@@ -1,15 +1,16 @@
 package eu.pommeray.random_additions;
-
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Random_additions extends JavaPlugin {
+public final class Random_additions extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
+        PluginManager pm = getServer().getPluginManager();
+        pm.registerEvents(this,this);
     }
 
     @EventHandler
