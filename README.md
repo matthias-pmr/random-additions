@@ -10,6 +10,10 @@ To use UnitTesting in our Project, we used: https://github.com/MockBukkit/MockBu
 
 For setup instructions please see the [documentation](https://docs.papermc.io/paper/dev/plugin-yml) : we need it to understand how to implements the plugin into Minecraft
 
+## Learning how to use bukkit.event 
+
+Bukkit.event.ItemMeta doc: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/meta/ItemMeta.html 
+
 ## License
 
 This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
