@@ -1,4 +1,5 @@
 package eu.pommeray.random_additions;
+import eu.pommeray.random_additions.commands.Calculator;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -11,6 +12,7 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
     public void onEnable() {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(this,this);
+        this.getCommand("calculator").setExecutor(new Calculator());
     }
 
     @EventHandler
