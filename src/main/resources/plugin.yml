@@ -2,3 +2,8 @@ name: random_additions
 version: '${project.version}'
 main: eu.pommeray.random_additions.Random_additions
 api-version: '1.20'
+commands:
+  kit:
+    description: Allows calculations of simple expressions
+    usage: /calculator <firstNumber> <operation> <secondNumber>
+    permission: random_additions.calculator
