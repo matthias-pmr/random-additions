@@ -19,46 +19,55 @@ import java.util.Objects;
 
 public final class RandomAdditions extends JavaPlugin implements Listener {
 
-    @Override
-    public void onEnable() {
-        PluginManager pm = getServer().getPluginManager();
-        pm.registerEvents(this, this);
-        try {
-            Objects.requireNonNull(this.getCommand("calculator")).setExecutor(new Calculator());
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
+  @Override
+  public void onEnable() {
+    PluginManager pm = getServer().getPluginManager();
+    pm.registerEvents(this, this);
+    try {
+      Objects.requireNonNull(this.getCommand("calculator")).setExecutor(new Calculator());
+    } catch (NullPointerException e) {
+      e.printStackTrace();
     }
+  }
 
-    @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) {
-        event.getPlayer().sendMessage("Hello " + event.getPlayer().getName() + ", this is a message proving that the plugin successfully loads!");
-    }
+  @EventHandler
+  public void onPlayerJoin(PlayerJoinEvent event) {
+    event
+        .getPlayer()
+        .sendMessage(
+            "Hello "
+                + event.getPlayer().getName()
+                + ", this is a message proving that the plugin successfully loads!");
+  }
 
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
-    }
+  @Override
+  public void onDisable() {
+    // Plugin shutdown logic
+  }
 
-    @EventHandler
-    public void onAch(PlayerAdvancementDoneEvent event) {
-        Player player = event.getPlayer();
-        Advancement advancement = event.getAdvancement();
-        String name = advancement.getKey().getKey();
-        player.sendMessage("This is to prove that the advancement is seen by this command " +
-                "and here is the name of the advance :" + name);
-        getLogger().info("name of the advancement: " + name);
-        if (name.equalsIgnoreCase("minecraft:adventure/kill_a_mob")) {
-            player.playNote(player.getLocation(), Instrument.PIANO, Note.natural(1, Note.Tone.A));
-            player.playNote(player.getLocation(), Instrument.BASS_GUITAR, Note.natural(1, Note.Tone.A));
-            player.sendMessage("§8§m----------------------------------------- \n" + "§a§lCONGRATS! \n " +
-                    "§fYou killed your first §bMob §f! \n §8§m-----------------------------------------");
-            PlayerInventory inventory = player.getInventory();
-            ItemStack IS = new ItemStack(Material.DIAMOND_SWORD);
-            inventory.addItem();
-            player.sendMessage("§8§m-----------------------------------------");
-            player.sendMessage("§a§lYou were given a Diamond Sword, check your Inventory!");
-            player.sendMessage("§8§m-----------------------------------------");
-        }
+  @EventHandler
+  public void onAch(PlayerAdvancementDoneEvent event) {
+    Player player = event.getPlayer();
+    Advancement advancement = event.getAdvancement();
+    String name = advancement.getKey().getKey();
+    player.sendMessage(
+        "This is to prove that the advancement is seen by this command "
+            + "and here is the name of the advance :"
+            + name);
+    getLogger().info("name of the advancement: " + name);
+    if (name.equalsIgnoreCase("minecraft:adventure/kill_a_mob")) {
+      player.playNote(player.getLocation(), Instrument.PIANO, Note.natural(1, Note.Tone.A));
+      player.playNote(player.getLocation(), Instrument.BASS_GUITAR, Note.natural(1, Note.Tone.A));
+      player.sendMessage(
+          "§8§m----------------------------------------- \n"
+              + "§a§lCONGRATS! \n "
+              + "§fYou killed your first §bMob §f! \n §8§m-----------------------------------------");
+      PlayerInventory inventory = player.getInventory();
+      ItemStack IS = new ItemStack(Material.DIAMOND_SWORD);
+      inventory.addItem();
+      player.sendMessage("§8§m-----------------------------------------");
+      player.sendMessage("§a§lYou were given a Diamond Sword, check your Inventory!");
+      player.sendMessage("§8§m-----------------------------------------");
     }
+  }
 }
