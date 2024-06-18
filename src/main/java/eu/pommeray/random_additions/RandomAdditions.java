@@ -43,14 +43,15 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
     public void onAch(PlayerAdvancementDoneEvent event){
         Player player = event.getPlayer();
         Advancement advancement = event.getAdvancement();
+        getLogger().info("name of the advancement: " + advancement);
+        player.sendMessage("This is to prove that the advancement is seen by this command " +
+                "and here is the name of the advance :" + advancement);
         String name = advancement.getKey().getKey();
         if(name.equalsIgnoreCase("minecraft:adventure/kill_a_mob")) {
             player.playNote(player.getLocation(), Instrument.PIANO, Note.natural(1, Note.Tone.A));
             player.playNote(player.getLocation(), Instrument.BASS_GUITAR, Note.natural(1, Note.Tone.A));
-            player.sendMessage("§8§m-----------------------------------------");
-            player.sendMessage("§a§lCONGRATS!");
-            player.sendMessage("§fYou killed your first §bMob §f!");
-            player.sendMessage("§8§m-----------------------------------------");
+            player.sendMessage("§8§m----------------------------------------- \n" +
+                    "§a§lCONGRATS! \n §fYou killed your first §bMob §f! \n §8§m-----------------------------------------");
             PlayerInventory inventory = player.getInventory();
             ItemStack IS = new ItemStack(Material.DIAMOND_SWORD);
             inventory.addItem();
