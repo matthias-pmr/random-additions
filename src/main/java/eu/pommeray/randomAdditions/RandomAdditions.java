@@ -1,5 +1,6 @@
-package eu.pommeray.random_additions;
-import eu.pommeray.random_additions.commands.Calculator;
+package eu.pommeray.randomAdditions;
+
+import eu.pommeray.randomAdditions.commands.Calculator;
 import org.bukkit.Instrument;
 import org.bukkit.Material;
 import org.bukkit.Note;
@@ -21,7 +22,7 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         PluginManager pm = getServer().getPluginManager();
-        pm.registerEvents(this,this);
+        pm.registerEvents(this, this);
         try {
             Objects.requireNonNull(this.getCommand("calculator")).setExecutor(new Calculator());
         } catch (NullPointerException e) {
@@ -30,7 +31,7 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event){
+    public void onPlayerJoin(PlayerJoinEvent event) {
         event.getPlayer().sendMessage("Hello " + event.getPlayer().getName() + ", this is a message proving that the plugin successfully loads!");
     }
 
@@ -40,18 +41,18 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onAch(PlayerAdvancementDoneEvent event){
+    public void onAch(PlayerAdvancementDoneEvent event) {
         Player player = event.getPlayer();
         Advancement advancement = event.getAdvancement();
-        getLogger().info("name of the advancement: " + advancement);
-        player.sendMessage("This is to prove that the advancement is seen by this command " +
-                "and here is the name of the advance :" + advancement);
         String name = advancement.getKey().getKey();
-        if(name.equalsIgnoreCase("minecraft:adventure/kill_a_mob")) {
+        player.sendMessage("This is to prove that the advancement is seen by this command " +
+                "and here is the name of the advance :" + name);
+        getLogger().info("name of the advancement: " + name);
+        if (name.equalsIgnoreCase("minecraft:adventure/kill_a_mob")) {
             player.playNote(player.getLocation(), Instrument.PIANO, Note.natural(1, Note.Tone.A));
             player.playNote(player.getLocation(), Instrument.BASS_GUITAR, Note.natural(1, Note.Tone.A));
-            player.sendMessage("§8§m----------------------------------------- \n" +
-                    "§a§lCONGRATS! \n §fYou killed your first §bMob §f! \n §8§m-----------------------------------------");
+            player.sendMessage("§8§m----------------------------------------- \n" + "§a§lCONGRATS! \n " +
+                    "§fYou killed your first §bMob §f! \n §8§m-----------------------------------------");
             PlayerInventory inventory = player.getInventory();
             ItemStack IS = new ItemStack(Material.DIAMOND_SWORD);
             inventory.addItem();

@@ -1,4 +1,4 @@
-package eu.pommeray.random_additions;
+package eu.pommeray.randomAdditions;
 
 import org.junit.jupiter.api.Test;
 

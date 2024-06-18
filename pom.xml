@@ -85,6 +85,8 @@
                 <encoding>UTF-8</encoding>
                 <consoleOutput>true</consoleOutput>
                 <failsOnError>true</failsOnError>
+                <violationSeverity>warning</violationSeverity>
+                <includeTestSourceDirectory>true</includeTestSourceDirectory>
             </configuration>
         </plugin>
     </plugins>
