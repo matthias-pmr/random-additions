@@ -14,13 +14,19 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public final class RandomAdditions extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(this,this);
-        this.getCommand("calculator").setExecutor(new Calculator());
+        try {
+            Objects.requireNonNull(this.getCommand("calculator")).setExecutor(new Calculator());
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
     @EventHandler
