@@ -1,9 +1,9 @@
 name: RandomAdditions
 version: '${project.version}'
-main: eu.pommeray.random_additions.RandomAdditions
+main: eu.pommeray.randomadditions.RandomAdditions
 api-version: '1.20'
 commands:
   calculator:
     description: Allows calculations of simple expressions
     usage: /calculator <firstNumber> <operation> <secondNumber>
-    permission: random_additions.calculator
+    permission: randomadditions.calculator
