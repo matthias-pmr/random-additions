@@ -1,6 +1,7 @@
-package eu.pommeray.randomAdditions;
+package eu.pommeray.randomadditions;
 
-import eu.pommeray.randomAdditions.commands.Calculator;
+import eu.pommeray.randomadditions.commands.Calculator;
+import java.util.Objects;
 import org.bukkit.Instrument;
 import org.bukkit.Material;
 import org.bukkit.Note;
@@ -15,10 +16,14 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Objects;
-
+/**
+* The basic class: contains all the methods that are called during the game.
+*/
 public final class RandomAdditions extends JavaPlugin implements Listener {
 
+  /**
+  * This method is called when the plugin is enabled.
+  */
   @Override
   public void onEnable() {
     PluginManager pm = getServer().getPluginManager();
@@ -30,13 +35,14 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
     }
   }
 
+  /**
+  * This method is called when a player joins the server.
+  *
+  * @param event the event that is triggered when a player joins the server
+  */
   @EventHandler
   public void onPlayerJoin(PlayerJoinEvent event) {
-    event
-        .getPlayer()
-        .sendMessage(
-            "Hello "
-                + event.getPlayer().getName()
+    event.getPlayer().sendMessage("Hello " + event.getPlayer().getName()
                 + ", this is a message proving that the plugin successfully loads!");
   }
 
@@ -45,25 +51,28 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
     // Plugin shutdown logic
   }
 
+  /**
+  * This method is called when a player completes an advancement.
+  *
+  * @param event the event that is triggered when a player completes an advancement
+  */
   @EventHandler
   public void onAch(PlayerAdvancementDoneEvent event) {
     Player player = event.getPlayer();
     Advancement advancement = event.getAdvancement();
     String name = advancement.getKey().getKey();
-    player.sendMessage(
-        "This is to prove that the advancement is seen by this command "
-            + "and here is the name of the advance :"
-            + name);
+    player.sendMessage("This is to prove that the advancement is seen by this command "
+        + "and here is the name of the advance :" + name);
     getLogger().info("name of the advancement: " + name);
     if (name.equalsIgnoreCase("minecraft:adventure/kill_a_mob")) {
       player.playNote(player.getLocation(), Instrument.PIANO, Note.natural(1, Note.Tone.A));
       player.playNote(player.getLocation(), Instrument.BASS_GUITAR, Note.natural(1, Note.Tone.A));
-      player.sendMessage(
-          "§8§m----------------------------------------- \n"
+      player.sendMessage("§8§m----------------------------------------- \n"
               + "§a§lCONGRATS! \n "
-              + "§fYou killed your first §bMob §f! \n §8§m-----------------------------------------");
+              + "§fYou killed your first §bMob §f! \n "
+              + "§8§m-----------------------------------------");
       PlayerInventory inventory = player.getInventory();
-      ItemStack IS = new ItemStack(Material.DIAMOND_SWORD);
+      ItemStack itemStack = new ItemStack(Material.DIAMOND_SWORD);
       inventory.addItem();
       player.sendMessage("§8§m-----------------------------------------");
       player.sendMessage("§a§lYou were given a Diamond Sword, check your Inventory!");
