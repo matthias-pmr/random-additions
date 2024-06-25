@@ -61,10 +61,8 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
     Player player = event.getPlayer();
     Advancement advancement = event.getAdvancement();
     String name = advancement.getKey().getKey();
-    player.sendMessage("This is to prove that the advancement is seen by this command "
-        + "and here is the name of the advance :" + name);
     getLogger().info("name of the advancement: " + name);
-    if (name.equalsIgnoreCase("minecraft:adventure/kill_a_mob")) {
+    if (name.equalsIgnoreCase("adventure/kill_a_mob")) {
       player.playNote(player.getLocation(), Instrument.PIANO, Note.natural(1, Note.Tone.A));
       player.playNote(player.getLocation(), Instrument.BASS_GUITAR, Note.natural(1, Note.Tone.A));
       player.sendMessage("§8§m----------------------------------------- \n"
