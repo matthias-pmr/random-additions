@@ -33,8 +33,6 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
     } catch (NullPointerException e) {
       e.printStackTrace();
     }
-    Integer[] ints = new Integer[]{3, 4};
-    System.out.println(ints.toString());
   }
 
   /**
