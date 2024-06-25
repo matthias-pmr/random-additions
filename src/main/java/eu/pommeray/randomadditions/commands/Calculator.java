@@ -20,9 +20,9 @@ public class Calculator implements CommandExecutor {
   * @return if the command was successfully executed
   */
   @Override
-  public boolean onCommand(@NotNull CommandSender sender,
-                           @NotNull Command command,
-                           @NotNull String label, String[] args) {
+  public boolean onCommand(CommandSender sender,
+                           Command command,
+                           String label, String[] args) {
     boolean worked;
     int firstNumber = 0;
     int secondNumber = 0;
