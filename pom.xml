@@ -27,8 +27,10 @@
             <target>${java.version}</target>
             <encoding>UTF-8</encoding>
             <compilerArgs>
-              <arg>-XDcompilePolicy=simple</arg>
-              <arg>-Xplugin:ErrorProne</arg>
+                <arg>-XDcompilePolicy=simple</arg>
+                <arg>-Xplugin:ErrorProne
+                    -XepDisableWarningsInGeneratedCode
+                </arg>
             </compilerArgs>
             <annotationProcessorPaths>
               <path>
