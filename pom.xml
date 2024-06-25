@@ -22,10 +22,27 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
-        <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-        </configuration>
+         <configuration>
+            <source>8</source>
+            <target>8</target>
+            <encoding>UTF-8</encoding>
+            <compilerArgs>
+              <arg>-XDcompilePolicy=simple</arg>
+              <arg>-Xplugin:ErrorProne</arg>
+            </compilerArgs>
+            <annotationProcessorPaths>
+              <path>
+                <groupId>com.google.errorprone</groupId>
+                  <artifactId>error_prone_core</artifactId>
+                  <version>RELEASE</version>
+               </path>
+                  <!-- Other annotation processors go here.
+
+                  If 'annotationProcessorPaths' is set, processors will no longer be
+                  discovered on the regular -classpath; see also 'Using Error Prone
+                  together with other annotation processors' below. -->
+            </annotationProcessorPaths>
+         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

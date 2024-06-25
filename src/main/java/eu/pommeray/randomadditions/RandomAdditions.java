@@ -71,7 +71,7 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
               + "§8§m-----------------------------------------");
       PlayerInventory inventory = player.getInventory();
       ItemStack itemStack = new ItemStack(Material.DIAMOND_SWORD);
-      inventory.addItem();
+      inventory.addItem(itemStack);
       player.sendMessage("§8§m-----------------------------------------");
       player.sendMessage("§a§lYou were given a Diamond Sword, check your Inventory!");
       player.sendMessage("§8§m-----------------------------------------");
