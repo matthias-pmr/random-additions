@@ -23,7 +23,7 @@ public class Calculator implements CommandExecutor {
   public boolean onCommand(CommandSender sender,
                            Command command,
                            String label, String[] args) {
-    boolean worked;
+    boolean worked = true;
     int firstNumber = 0;
     int secondNumber = 0;
     String operation = args[1];
@@ -32,20 +32,19 @@ public class Calculator implements CommandExecutor {
       secondNumber = Integer.parseInt(args[2]);
     } catch (NumberFormatException e) {
       e.printStackTrace();
+      worked = false;
     }
     switch (operation) {
       case "+": {
         int result = firstNumber + secondNumber;
         sender.sendMessage("The result of " + firstNumber
                 + " + " + secondNumber + " is: " + result);
-        worked = true;
         break;
       }
       case "*": {
         int result = firstNumber * secondNumber;
         sender.sendMessage("The result of " + firstNumber
                   + " * " + secondNumber + " is: " + result);
-        worked = true;
         break;
       }
       case "/": {
@@ -57,7 +56,6 @@ public class Calculator implements CommandExecutor {
           sender.sendMessage("The result of " + firstNumber
                       + " / " + secondNumber + " is impossible to calculate");
         }
-        worked = true;
         break;
       }
       default: {
