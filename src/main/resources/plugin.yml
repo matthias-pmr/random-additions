@@ -6,4 +6,3 @@ commands:
   calculator:
     description: Allows calculations of simple expressions
     usage: /calculator <firstNumber> <operation> <secondNumber>
-    permission: randomadditions.calculator
