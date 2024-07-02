@@ -11,6 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerAdvancementDoneEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.PluginManager;
@@ -57,7 +58,7 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
   * @param event the event that is triggered when a player completes an advancement
   */
   @EventHandler
-  public void onAch(PlayerAdvancementDoneEvent event) {
+  public void onAdv(PlayerAdvancementDoneEvent event) {
     Player player = event.getPlayer();
     Advancement advancement = event.getAdvancement();
     String name = advancement.getKey().getKey();
@@ -77,4 +78,9 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
       player.sendMessage("§8§m-----------------------------------------");
     }
   }
+  /*
+  public void onTp(PlayerTeleportEvent event) {
+    Player player = event.getPlayer();
+  }
+  */
 }
