@@ -5,4 +5,5 @@ package eu.pommeray.randomadditions.commands;
  */
 public class TradeEvent {
 
+
 }
