@@ -2,7 +2,7 @@ package eu.pommeray.randomadditions;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import be.seeseemelk.mockbukkit.*;
+import be.seeseemelk.mockbukkit.MockBukkit;
 import be.seeseemelk.mockbukkit.ServerMock;
 import be.seeseemelk.mockbukkit.entity.PlayerMock;
 import org.bukkit.Bukkit;
@@ -44,7 +44,8 @@ class OnAdvTest {
   public void testIfAnItemIsGivenForKillingTheFirstMob() {
     fakePlayer.setName("Clarinette57");
     //System.out.println(fakeServer.getAdvancement(key));
-    fakeServer.dispatchCommand(Bukkit.getConsoleSender(), "advancement revoke " + fakePlayer.getName() + " everything");
+    fakeServer.dispatchCommand(Bukkit.getConsoleSender(),
+            "advancement revoke " + fakePlayer.getName() + " everything");
     fakeServer.dispatchCommand(
         Bukkit.getConsoleSender(),
         "advancement grant " + fakePlayer.getName() + " only adventure/kill_a_mob");
