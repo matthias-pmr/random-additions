@@ -3,7 +3,6 @@ package eu.pommeray.randomadditions.commands;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * The class we will use to allow players to make simple calculations.

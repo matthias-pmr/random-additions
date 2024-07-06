@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerAdvancementDoneEvent;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
@@ -59,6 +60,7 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
   */
   @EventHandler
   public void onAdv(PlayerAdvancementDoneEvent event) {
+    System.out.println("OnAdvancementDoneEvent triggered!");
     Player player = event.getPlayer();
     Advancement advancement = event.getAdvancement();
     String name = advancement.getKey().getKey();
@@ -78,9 +80,32 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
       player.sendMessage("§8§m-----------------------------------------");
     }
   }
+
+
+
   /*
-  public void onTp(PlayerTeleportEvent event) {
-    Player player = event.getPlayer();
+  @EventHandler
+  public void onItemConsumption(PlayerItemConsumeEvent event) {
+    (event.getItem().getType() == Material.POISONOUS_POTATO) {
+      Player player = event.getPlayer();
+      poisonedPotatoEaters.add(player.getUniqueId());
+      Random random = new Random();
+      int x = random.nextInt(1000);
+      int y = 100;
+      int z = random.nextInt(1000);
+      Location randomLocation = new Location(player.getWorld(), x, y, z);
+      player.teleport(randomLocation);
+      player.sendMessage("§8§m----------------------------------------- \n"
+              + "§cYou ate a poisonous potato and got teleported!"
+              + "§8§m----------------------------------------- \n");
+     }
   }
+
+  public void onTeleport(PlayerTeleportEvent event) {
+    Player player = event.getPlayer();
+
+    player.sendMessage("§8§m----------------------------------------- \n"
+              + "§cYou got teleported and that created a Storm!"
+              + "§8§m----------------------------------------- \n");
   */
 }
