@@ -31,7 +31,8 @@ public class RandomAdditions extends JavaPlugin implements Listener {
     PluginManager pm = getServer().getPluginManager();
     pm.registerEvents(this, this);
     try {
-      Objects.requireNonNull(this.getCommand("calculator")).setExecutor(new Calculator());
+      Objects.requireNonNull(this.getCommand("calculator"))
+              .setExecutor(new Calculator(this.getLogger()));
     } catch (NullPointerException e) {
       getLogger().log(java.util.logging.Level.SEVERE,
               "Could not register the command calculator", e);
