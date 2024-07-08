@@ -1,13 +1,21 @@
 package eu.pommeray.randomadditions.commands;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+
 
 /**
  * The class we will use to allow players to make simple calculations.
  */
 public class Calculator implements CommandExecutor {
+  private final Logger logger;
+
+  public Calculator(Logger logger) {
+    this.logger = logger;
+  }
 
   /**
   * This method is called, when somebody uses our command.
@@ -21,8 +29,18 @@ public class Calculator implements CommandExecutor {
   @Override
   public boolean onCommand(CommandSender sender,
                            Command command,
-                           String label, String[] args) {
+                           String label,
+                           String[] args) {
     boolean worked = true;
+    if (args.length != 3) {
+      sender.sendMessage(
+          "------------------------------------------\n"
+              + "Description: Allows calculations of simple expressions \n"
+              + "Usage: /calculator <number> <operation> <number>"
+              + "Operators available: +, *, / \n"
+              + "------------------------------------------\n");
+      return false;
+    }
     int firstNumber = 0;
     int secondNumber = 0;
     String operation = args[1];
@@ -30,7 +48,8 @@ public class Calculator implements CommandExecutor {
       firstNumber = Integer.parseInt(args[0]);
       secondNumber = Integer.parseInt(args[2]);
     } catch (NumberFormatException e) {
-      e.printStackTrace();
+      logger.log(Level.SEVERE,
+              "An error occurred while parsing numbers or executing the operation", e);
       worked = false;
     }
     switch (operation) {
