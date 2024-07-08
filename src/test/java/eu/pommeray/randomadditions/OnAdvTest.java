@@ -8,7 +8,9 @@ import be.seeseemelk.mockbukkit.entity.PlayerMock;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.advancement.Advancement;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerAdvancementDoneEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
@@ -23,14 +25,20 @@ class OnAdvTest {
   private ServerMock fakeServer;
   private RandomAdditions plugin;
   PlayerMock fakePlayer;
-  NamespacedKey key = new NamespacedKey("minecraft", "adventure/kill_a_mob");
+  Advancement mockAdvancement = Mockito.mock(Advancement.class);
 
   @BeforeEach
   public void setUp() {
     // Start the mock server
     fakeServer = MockBukkit.mock();
+    // Load the RandomAdditions plugin
+    plugin = MockBukkit.load(RandomAdditions.class);
+    // Create a fake player
     fakePlayer = fakeServer.addPlayer();
-    fakePlayer.getInventory().clear();
+    fakePlayer.getInventory().clear(); // Make sure that the inventory doesn't contain already a diamond sword
+    fakePlayer.setName("Clarinette57");
+    Mockito.when(mockAdvancement.getKey())
+            .thenReturn(new NamespacedKey("minecraft", "adventure/kill_a_mob"));
   }
 
   @AfterEach
@@ -39,16 +47,11 @@ class OnAdvTest {
     MockBukkit.unmock();
   }
 
-
   @Test
   public void testIfAnItemIsGivenForKillingTheFirstMob() {
-    fakePlayer.setName("Clarinette57");
-    //System.out.println(fakeServer.getAdvancement(key));
-    fakeServer.dispatchCommand(Bukkit.getConsoleSender(),
-            "advancement revoke " + fakePlayer.getName() + " everything");
-    fakeServer.dispatchCommand(
-        Bukkit.getConsoleSender(),
-        "advancement grant " + fakePlayer.getName() + " only adventure/kill_a_mob");
-    assertTrue(fakePlayer.getInventory().contains(Material.DIAMOND));
+    //Simulate the PlayerAdvancementDoneEvent
+    PlayerAdvancementDoneEvent event = new PlayerAdvancementDoneEvent(fakePlayer, mockAdvancement);
+    fakeServer.getPluginManager().callEvent(event);
+    assertTrue(fakePlayer.getInventory().contains(Material.DIAMOND_SWORD));
   }
 }

@@ -21,7 +21,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 /**
 * The basic class: contains all the methods that are called during the game.
 */
-public final class RandomAdditions extends JavaPlugin implements Listener {
+public class RandomAdditions extends JavaPlugin implements Listener {
 
   /**
   * This method is called when the plugin is enabled.
@@ -60,11 +60,11 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
   */
   @EventHandler
   public void onAdv(PlayerAdvancementDoneEvent event) {
-    System.out.println("OnAdvancementDoneEvent triggered!");
+    //System.out.println("OnAdvancementDoneEvent triggered!");
     Player player = event.getPlayer();
     Advancement advancement = event.getAdvancement();
     String name = advancement.getKey().getKey();
-    getLogger().info("name of the advancement: " + name);
+    //getLogger().info("name of the advancement: " + name);
     if (name.equalsIgnoreCase("adventure/kill_a_mob")) {
       player.playNote(player.getLocation(), Instrument.PIANO, Note.natural(1, Note.Tone.A));
       player.playNote(player.getLocation(), Instrument.BASS_GUITAR, Note.natural(1, Note.Tone.A));
@@ -73,8 +73,7 @@ public final class RandomAdditions extends JavaPlugin implements Listener {
               + "§fYou killed your first §bMob §f! \n "
               + "§8§m-----------------------------------------");
       PlayerInventory inventory = player.getInventory();
-      ItemStack itemStack = new ItemStack(Material.DIAMOND_SWORD);
-      inventory.addItem(itemStack);
+      inventory.addItem(new ItemStack(Material.DIAMOND_SWORD));
       player.sendMessage("§8§m-----------------------------------------");
       player.sendMessage("§a§lYou were given a Diamond Sword, check your Inventory!");
       player.sendMessage("§8§m-----------------------------------------");
