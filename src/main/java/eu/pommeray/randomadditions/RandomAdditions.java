@@ -33,7 +33,8 @@ public class RandomAdditions extends JavaPlugin implements Listener {
     try {
       Objects.requireNonNull(this.getCommand("calculator")).setExecutor(new Calculator());
     } catch (NullPointerException e) {
-      e.printStackTrace();
+      getLogger().log(java.util.logging.Level.SEVERE,
+              "Could not register the command calculator", e);
     }
   }
 
