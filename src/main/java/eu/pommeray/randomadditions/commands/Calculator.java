@@ -1,5 +1,6 @@
 package eu.pommeray.randomadditions.commands;
 
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bukkit.command.Command;
@@ -32,11 +33,10 @@ public class Calculator implements CommandExecutor {
                            String label,
                            String[] args) {
     boolean worked = true;
-    if (args.length != 3) {
+    if (args.length != 3 || args[1].equals("help")) {
       sender.sendMessage(
           "------------------------------------------\n"
               + "Description: Allows calculations of simple expressions \n"
-              + "Usage: /calculator <number> <operation> <number>"
               + "Operators available: +, *, / \n"
               + "------------------------------------------\n");
       return false;
