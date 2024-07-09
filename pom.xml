@@ -165,7 +165,7 @@
             <configuration>
                 <message>Creating site for ${project.version}</message>
                 <repositoryOwner>matthias-pmr</repositoryOwner>
-                <repositoryName>Matthias</repositoryName>
+                <repositoryName>random-additions</repositoryName>
                 <server>github</server>
             </configuration>
             <executions>
