@@ -7,7 +7,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
-import org.bukkit.event.player.PlayerTeleportEvent;
 
 
 /**
@@ -25,8 +24,8 @@ public class PoisonousPotatoConsumptionRandomTeleport implements Listener {
       Player player = event.getPlayer();
       Random random = new Random();
       int x = random.nextInt(1000) - 1000;
-      int y = 100;
       int z = random.nextInt(1000) - 1000;
+      int y = player.getWorld().getHighestBlockYAt(x, z);
       Location randomLocation = new Location(player.getWorld(), x, y, z);
       player.teleport(randomLocation);
       player.sendMessage("§8§m----------------------------------------- \n"
@@ -34,11 +33,4 @@ public class PoisonousPotatoConsumptionRandomTeleport implements Listener {
               + "§8§m----------------------------------------- \n");
     }
   }
-  /*
-  public void onTeleport(PlayerTeleportEvent event) {
-    Player player = event.getPlayer();
-    player.sendMessage("§8§m----------------------------------------- \n"
-              + "§cYou got teleported and that created a Storm!"
-              + "§8§m----------------------------------------- \n");
-  */
 }

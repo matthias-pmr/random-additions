@@ -158,30 +158,6 @@
                 <skipDeploy>true</skipDeploy>
             </configuration>
         </plugin>
-        <plugin>
-            <groupId>com.github.github</groupId>
-            <artifactId>site-maven-plugin</artifactId>
-            <version>0.8</version>
-            <configuration>
-                <message>Creating site for ${project.version}</message>
-                <repositoryOwner>matthias-pmr</repositoryOwner>
-                <repositoryName>random-additions</repositoryName>
-                <server>github</server>
-            </configuration>
-            <executions>
-                <execution>
-                    <phase>site-deploy</phase>
-                    <goals>
-                        <goal>site</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-project-info-reports-plugin</artifactId>
-            <version>3.0.0</version>
-        </plugin>
     </plugins>
     <resources>
       <resource>
