@@ -4,13 +4,6 @@ import eu.pommeray.randomadditions.commands.Calculator;
 import eu.pommeray.randomadditions.events.FirstMonsterKilledReward;
 import eu.pommeray.randomadditions.events.PoisonousPotatoConsumptionRandomTeleport;
 import java.util.Objects;
-import java.util.logging.Logger;
-
-import org.bukkit.Instrument;
-import org.bukkit.Material;
-import org.bukkit.Note;
-import org.bukkit.advancement.Advancement;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerAdvancementDoneEvent;
@@ -54,6 +47,9 @@ public class RandomAdditions extends JavaPlugin implements Listener {
                 + ", this is a message proving that the plugin successfully loads!");
   }
 
+  /**
+   * This method is only used if the plugin should be disabled.
+   */
   @Override
   public void onDisable() {
     // Plugin shutdown logic

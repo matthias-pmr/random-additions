@@ -57,7 +57,7 @@ class MonsterHunterAdvancementRewardTest {
   }
 
   @Test
-  public void testTheMessageReceivedByThePlayer(){
+  public void testTheMessageReceivedByThePlayer() {
     // Simulate the PlayerAdvancementDoneEvent
     PlayerAdvancementDoneEvent event = new PlayerAdvancementDoneEvent(fakePlayer, mockAdvancement);
     fakeServer.getPluginManager().callEvent(event);
