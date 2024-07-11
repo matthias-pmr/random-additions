@@ -27,10 +27,10 @@ public class PoisonousPotatoConsumptionRandomTeleport implements Listener {
       int z = random.nextInt(1000) - 1000;
       int y = player.getWorld().getHighestBlockYAt(x, z);
       Location randomLocation = new Location(player.getWorld(), x, y, z);
-      player.teleport(randomLocation);
       player.sendMessage("§8§m----------------------------------------- \n"
               + "§cYou ate a poisonous potato and got teleported!"
               + "§8§m----------------------------------------- \n");
+      player.teleport(randomLocation);
     }
   }
 }

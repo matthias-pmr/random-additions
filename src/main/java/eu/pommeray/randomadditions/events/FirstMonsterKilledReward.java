@@ -22,11 +22,9 @@ public class FirstMonsterKilledReward implements Listener {
    */
   @EventHandler
   public void onAdv(PlayerAdvancementDoneEvent event) {
-    //System.out.println("OnAdvancementDoneEvent triggered!");
     Player player = event.getPlayer();
     Advancement advancement = event.getAdvancement();
     String name = advancement.getKey().getKey();
-    //getLogger().info("name of the advancement: " + name);
     if (name.equalsIgnoreCase("adventure/kill_a_mob")) {
       player.playNote(player.getLocation(), Instrument.PIANO, Note.natural(1, Note.Tone.A));
       player.playNote(player.getLocation(), Instrument.BASS_GUITAR, Note.natural(1, Note.Tone.A));

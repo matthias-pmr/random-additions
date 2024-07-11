@@ -1,11 +1,11 @@
 package eu.pommeray.randomadditions;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import be.seeseemelk.mockbukkit.MockBukkit;
 import be.seeseemelk.mockbukkit.ServerMock;
 import be.seeseemelk.mockbukkit.entity.PlayerMock;
-import eu.pommeray.randomadditions.RandomAdditions;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.advancement.Advancement;
@@ -16,11 +16,14 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
-class OnAdvTest {
+/**
+ * This class tests the method OnAdv with the Monster Hunter Advancement.
+ */
+class MonsterHunterAdvancementRewardTest {
   @Mock
   private ServerMock fakeServer;
-  PlayerMock fakePlayer;
-  Advancement mockAdvancement = Mockito.mock(Advancement.class);
+  private PlayerMock fakePlayer;
+  private Advancement mockAdvancement = Mockito.mock(Advancement.class);
 
   @BeforeEach
   public void setUp() {
@@ -51,5 +54,21 @@ class OnAdvTest {
     PlayerAdvancementDoneEvent event = new PlayerAdvancementDoneEvent(fakePlayer, mockAdvancement);
     fakeServer.getPluginManager().callEvent(event);
     assertTrue(fakePlayer.getInventory().contains(Material.DIAMOND_SWORD));
+  }
+
+  @Test
+  public void testTheMessageReceivedByThePlayer(){
+    // Simulate the PlayerAdvancementDoneEvent
+    PlayerAdvancementDoneEvent event = new PlayerAdvancementDoneEvent(fakePlayer, mockAdvancement);
+    fakeServer.getPluginManager().callEvent(event);
+    // Skip the first message that asserts the loading of the plugin
+    fakePlayer.nextMessage();
+    // Register the message of the Monster Hunter Advancement
+    String message = fakePlayer.nextMessage();
+    assertEquals("§8§m----------------------------------------- \n"
+            + "§a§lCONGRATS! \n"
+            + " §fYou killed your first §bMob §f! \n"
+            + " §8§m-----------------------------------------", message);
+
   }
 }

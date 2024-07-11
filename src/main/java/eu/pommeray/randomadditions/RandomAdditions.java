@@ -2,8 +2,10 @@ package eu.pommeray.randomadditions;
 
 import eu.pommeray.randomadditions.commands.Calculator;
 import eu.pommeray.randomadditions.events.FirstMonsterKilledReward;
+import eu.pommeray.randomadditions.events.PoisonousPotatoConsumptionRandomTeleport;
 import java.util.Objects;
 import java.util.logging.Logger;
+
 import org.bukkit.Instrument;
 import org.bukkit.Material;
 import org.bukkit.Note;
@@ -31,6 +33,7 @@ public class RandomAdditions extends JavaPlugin implements Listener {
     PluginManager pm = getServer().getPluginManager();
     pm.registerEvents(this, this);
     pm.registerEvents(new FirstMonsterKilledReward(), this);
+    pm.registerEvents(new PoisonousPotatoConsumptionRandomTeleport(), this);
     try {
       Objects.requireNonNull(this.getCommand("calculator"))
               .setExecutor(new Calculator(this.getLogger()));
