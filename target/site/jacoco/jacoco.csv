@@ -2,7 +2,3 @@ GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_
 random_additions,eu.pommeray.random_additions.commands,Calculator,14,0,4,0,4,0,4,0,2,0
 random_additions,eu.pommeray.random_additions,RandomAdditions,36,0,0,0,8,0,4,0,4,0
 random_additions,eu.pommeray.random_additions.events,FirstAdvancementKitGiver,4,0,0,0,2,0,2,0,2,0
-random_additions,eu.pommeray.randomadditions.events,FirstMonsterKilledReward,0,61,1,1,0,14,1,2,0,2
-random_additions,eu.pommeray.randomadditions.events,PoisonousPotatoConsumptionRandomTeleport,0,53,1,1,0,11,1,2,0,2
-random_additions,eu.pommeray.randomadditions,RandomAdditions,7,53,0,0,2,12,0,4,0,4
-random_additions,eu.pommeray.randomadditions.commands,Calculator,28,123,3,7,6,25,3,5,0,2
