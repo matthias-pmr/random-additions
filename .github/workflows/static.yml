@@ -35,6 +35,8 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+      - name: Build Maven Site
+        run: mvn site
         with:
           # Upload entire repository
           path: './target/site/'
