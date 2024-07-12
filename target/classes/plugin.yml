@@ -1,4 +1,0 @@
-name: random_additions
-version: '1.0-SNAPSHOT'
-main: eu.pommeray.random_additions.Random_additions
-api-version: '1.20'
