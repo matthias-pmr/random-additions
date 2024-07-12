@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RandomAdditions.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">random_additions</a> &gt; <a href="index.source.html" class="el_package">eu.pommeray.random_additions</a> &gt; <span class="el_source">RandomAdditions.java</span></div><h1>RandomAdditions.java</h1><pre class="source lang-java linenums">package eu.pommeray.random_additions;
+import eu.pommeray.random_additions.commands.Calculator;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.java.JavaPlugin;
+<span class="nc" id="L8"></span>
+public final class RandomAdditions extends JavaPlugin implements Listener {
+
+    @Override
+<span class="nc" id="L12">    public void onEnable() {</span>
+<span class="nc" id="L13">        PluginManager pm = getServer().getPluginManager();</span>
+<span class="nc" id="L14">        pm.registerEvents(this,this);</span>
+        this.getCommand(&quot;calculator&quot;).setExecutor(new Calculator());
+    }
+
+<span class="nc" id="L18">    @EventHandler</span>
+<span class="nc" id="L19">    public void onPlayerJoin(PlayerJoinEvent event){</span>
+        event.getPlayer().sendMessage(&quot;Hello &quot; + event.getPlayer().getName() + &quot;, this is a message proving that the plugin successfully loads!&quot;);
+    }
+
+    @Override
+<span class="nc" id="L24">    public void onDisable() {</span>
+        // Plugin shutdown logic
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202405300954</span></div></body></html>
