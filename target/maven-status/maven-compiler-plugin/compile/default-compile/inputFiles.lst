@@ -1,1 +1,4 @@
-D:\Personnel\Ecole\ISFATES\Semestre 4\Automatisierte Entwicklung\projekt\code\random-additions\src\main\java\eu\pommeray\random_additions\RandomAdditions.java
+/home/runner/work/random-additions/random-additions/src/main/java/eu/pommeray/randomadditions/RandomAdditions.java
+/home/runner/work/random-additions/random-additions/src/main/java/eu/pommeray/randomadditions/commands/Calculator.java
+/home/runner/work/random-additions/random-additions/src/main/java/eu/pommeray/randomadditions/events/FirstMonsterKilledReward.java
+/home/runner/work/random-additions/random-additions/src/main/java/eu/pommeray/randomadditions/events/PoisonousPotatoConsumptionRandomTeleport.java
