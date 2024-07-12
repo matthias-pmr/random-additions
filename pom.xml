@@ -138,7 +138,7 @@
                                 <excludes>
                                     <exclude>org.apache.maven.plugins:maven-verifier-plugin</exclude>
                                 </excludes>
-                                <message>Please consider using the maven-invoker-plugin (http://maven.apache.org/plugins/maven-invoker-plugin/)!</message>
+                                <message>Please consider using the maven-invoker-plugin (https://maven.apache.org/plugins/maven-invoker-plugin/)!</message>
                             </bannedPlugins>
                             <requireMavenVersion>
                                 <version>3.8.8</version>
@@ -152,11 +152,9 @@
             </executions>
         </plugin>
         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-site-plugin</artifactId>
-            <version>3.3</version>
-            <configuration>
-                <skipDeploy>true</skipDeploy>
-            </configuration>
+            <version>3.9.1</version>
         </plugin>
     </plugins>
     <resources>
@@ -223,7 +221,7 @@
   <distributionManagement>
     <site>
       <id>dev.pommeray.eu</id>
-        <url>file://${basedir}/target/website</url>
+        <url>file://${basedir}/target/site</url>
     </site>
   </distributionManagement>
 </project>
