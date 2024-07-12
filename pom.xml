@@ -82,9 +82,6 @@
                     <goals>
                         <goal>report</goal>
                     </goals>
-                    <configuration>
-                        <outputDirectory>target/site/jacoco</outputDirectory>
-                    </configuration>
                 </execution>
             </executions>
         </plugin>

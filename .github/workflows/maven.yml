@@ -37,12 +37,6 @@ jobs:
         name: Package
         path: staging
 
-    - name: Generate JaCoCo Badge
-      id: jacoco
-      uses: cicirello/jacoco-badge-generator@v2
-      with:
-        jacoco-csv-file: target/site/jacoco/jacoco.csv
-
     - name: Log coverage percentage
       run: |
         echo "coverage = ${{ steps.jacoco.outputs.coverage }}"

@@ -40,6 +40,7 @@ jobs:
         with:
           # Upload entire repository
           path: './target/site/'
+
       - name: Build Maven Site
         run: mvn site
 
