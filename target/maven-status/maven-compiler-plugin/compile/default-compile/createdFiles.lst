@@ -1,4 +1,4 @@
-eu/pommeray/randomadditions/RandomAdditions.class
-eu/pommeray/randomadditions/events/FirstMonsterKilledReward.class
-eu/pommeray/randomadditions/commands/Calculator.class
-eu/pommeray/randomadditions/events/PoisonousPotatoConsumptionRandomTeleport.class
+eu\pommeray\randomadditions\commands\Calculator.class
+eu\pommeray\randomadditions\events\FirstMonsterKilledReward.class
+eu\pommeray\randomadditions\RandomAdditions.class
+eu\pommeray\randomadditions\events\PoisonousPotatoConsumptionRandomTeleport.class

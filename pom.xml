@@ -71,17 +71,21 @@
             <version>0.8.12</version>
             <executions>
                 <execution>
+                    <id>default-prepare-agent</id>
                     <goals>
                         <goal>prepare-agent</goal>
                     </goals>
                 </execution>
-                <!-- attached to Maven test phase -->
                 <execution>
-                    <id>report</id>
+                    <id>default-report</id>
                     <phase>test</phase>
                     <goals>
                         <goal>report</goal>
                     </goals>
+                    <configuration>
+                        <dataFile>${project.build.directory}/jacoco.exec</dataFile>
+                        <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
+                    </configuration>
                 </execution>
             </executions>
         </plugin>
@@ -225,18 +229,18 @@
         <artifactId>maven-project-info-reports-plugin</artifactId>
         <version>3.6.1</version>
       </plugin>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.12</version>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>report</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
+  <plugin>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.8.12</version>
+    <reportSets>
+      <reportSet>
+        <reports>
+          <report>report</report>
+        </reports>
+      </reportSet>
+    </reportSets>
+  </plugin>
     </plugins>
   </reporting>
 
