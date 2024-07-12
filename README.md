@@ -1,19 +1,13 @@
-# Random Additions Plugin for a server
+# Repository for the Minecraft Plugin "Random Additions"
+Created for the ASE-Course (SS2024) at the HTW Saarbrücken. <hr/>
+The plugin adds random features to the game to learn about the Bukkit API, Java and the use of automations. <hr/>
+The plugin uses the Bukkit API for Minecraft 1.20.6 and is meant to run on a PaperMC 1.20.6 server.
 
 ## Learning
 
-Here is a tutorial on github we used to begin with the plugin: https://gist.github.com/kangarko/456d9cfce52dc971b93dbbd12a95f43c
-
-To use UnitTesting in our Project, we used: https://github.com/MockBukkit/MockBukkit?tab=readme-ov-file#adding-mockbukkit-via-maven
+- Ideas and help was found on the [official PaperMC documentation on the Bukkit API](https://jd.papermc.io/paper/1.20.6/).
+- UnitTesting was done thanks to [MockBukkit](https://github.com/MockBukkit/).
 
 ## Setup
 
-For setup instructions please see the [documentation](https://docs.papermc.io/paper/dev/plugin-yml) : we need it to understand how to implements the plugin into Minecraft
-
-## Learning how to use bukkit.event 
-
-Bukkit.event.ItemMeta doc: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/meta/ItemMeta.html 
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Get the jar artefacts from the GitHub actions and put them in the plugins folder of your Minecraft server.
