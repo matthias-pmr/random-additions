@@ -82,6 +82,9 @@
                     <goals>
                         <goal>report</goal>
                     </goals>
+                    <configuration>
+                        <outputDirectory>target/site/jacoco</outputDirectory>
+                    </configuration>
                 </execution>
             </executions>
         </plugin>
@@ -223,7 +226,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.10</version>
+        <version>0.8.12</version>
         <reportSets>
           <reportSet>
             <reports>
