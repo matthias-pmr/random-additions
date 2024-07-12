@@ -33,8 +33,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - run: mvn -e --batch-mode --update-snapshots verify
-    # the file already exists
-    #- run: mkdir staging && cp target/*.jar staging
+    - run: mkdir staging && cp target/*.jar staging
     - uses: actions/upload-artifact@v4
       with:
         name: Package
