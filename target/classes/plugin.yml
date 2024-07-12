@@ -1,0 +1,8 @@
+name: RandomAdditions
+version: '1.0-SNAPSHOT'
+main: eu.pommeray.randomadditions.RandomAdditions
+api-version: '1.20'
+commands:
+  calculator:
+    description: Allows calculations of simple expressions
+    usage: /calculator <firstNumber> <operation> <secondNumber>
