@@ -82,10 +82,12 @@
                     <goals>
                         <goal>report</goal>
                     </goals>
+                    <!-- testing if this part that was changed is the problem
+                         to the jacoco report not being generated
                     <configuration>
                         <dataFile>${project.build.directory}/jacoco.exec</dataFile>
                         <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
-                    </configuration>
+                    </configuration-->
                 </execution>
             </executions>
         </plugin>
