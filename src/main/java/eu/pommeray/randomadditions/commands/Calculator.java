@@ -49,26 +49,26 @@ public class Calculator implements CommandExecutor {
     } catch (NumberFormatException e) {
       logger.log(Level.SEVERE,
               "An error occurred while parsing numbers or executing the operation", e);
-      worked = false;
+      return false;
     }
     switch (operation) {
       case "+": {
         int result = firstNumber + secondNumber;
         sender.sendMessage("The result of " + firstNumber
-                + " + " + secondNumber + " is: §3" + result);
+                + " + " + secondNumber + " is: §b" + result);
         break;
       }
       case "*": {
         int result = firstNumber * secondNumber;
         sender.sendMessage("The result of " + firstNumber
-                  + " * " + secondNumber + " is: §3" + result);
+                  + " * " + secondNumber + " is: §b" + result);
         break;
       }
       case "/": {
         if (secondNumber != 0) {
           double result = (double) firstNumber / secondNumber;
           sender.sendMessage("The result of " + firstNumber
-                      + " / " + secondNumber + " is: §3" + result);
+                      + " / " + secondNumber + " is: §b" + result);
         } else {
           sender.sendMessage("§cThe result of " + firstNumber
                       + " / " + secondNumber + " is impossible to calculate");

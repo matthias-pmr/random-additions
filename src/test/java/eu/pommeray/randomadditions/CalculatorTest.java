@@ -65,7 +65,7 @@ public class CalculatorTest {
     fakePlayer.nextMessage();
     String message = fakePlayer.nextMessage();
     assertEquals("The result of " + firstNumber
-         + " " + chosenOperation + " " + secondNumber + " is: §3" + expectedResult, message);
+         + " " + chosenOperation + " " + secondNumber + " is: §b" + expectedResult, message);
   }
 
   @Test
@@ -80,7 +80,7 @@ public class CalculatorTest {
     fakePlayer.nextMessage();
     String message = fakePlayer.nextMessage();
     assertEquals("The result of " + firstNumber
-          + " " + chosenOperation + " " + secondNumber + " is: §3" + expectedResult, message);
+          + " " + chosenOperation + " " + secondNumber + " is: §b" + expectedResult, message);
   }
 
   @Test
@@ -95,6 +95,21 @@ public class CalculatorTest {
     fakePlayer.nextMessage();
     String message = fakePlayer.nextMessage();
     assertEquals("The result of " + firstNumber
-        + " " + chosenOperation + " " + secondNumber + " is: §3" + expectedResult, message);
+        + " " + chosenOperation + " " + secondNumber + " is: §b" + expectedResult, message);
+  }
+
+  @Test
+  public void calculatorDivisionByZeroOperation() {
+    int firstNumber = 15;
+    int secondNumber = 0;
+    String chosenOperation = "/";
+    String expectedResult = "3.0";
+    // Player issues an addition that should return the right result
+    fakePlayer.performCommand("calculator 15 / 0");
+    // Skip the first message sent by the console
+    fakePlayer.nextMessage();
+    String message = fakePlayer.nextMessage();
+    assertEquals("§cThe result of " + firstNumber
+            + " / " + secondNumber + " is impossible to calculate", message);
   }
 }

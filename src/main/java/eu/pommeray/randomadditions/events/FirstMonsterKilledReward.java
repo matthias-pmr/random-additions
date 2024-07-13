@@ -35,7 +35,7 @@ public class FirstMonsterKilledReward implements Listener {
       PlayerInventory inventory = player.getInventory();
       inventory.addItem(new ItemStack(Material.DIAMOND_SWORD));
       player.sendMessage("§8§m-----------------------------------------");
-      player.sendMessage("§3§lYou were given a Diamond Sword, check your Inventory!");
+      player.sendMessage("§fYou were given a §3Diamond Sword§f, check your Inventory!");
       player.sendMessage("§8§m-----------------------------------------");
     }
   }
