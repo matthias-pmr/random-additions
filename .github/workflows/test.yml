@@ -44,6 +44,7 @@ jobs:
           name: Package
           path: staging
       - run: mvn -e --batch-mode --update-snapshots verify
+      - run: mvn jacoco:report
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
