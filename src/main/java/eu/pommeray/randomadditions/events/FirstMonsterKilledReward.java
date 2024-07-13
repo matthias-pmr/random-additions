@@ -29,13 +29,13 @@ public class FirstMonsterKilledReward implements Listener {
       player.playNote(player.getLocation(), Instrument.PIANO, Note.natural(1, Note.Tone.A));
       player.playNote(player.getLocation(), Instrument.BASS_GUITAR, Note.natural(1, Note.Tone.A));
       player.sendMessage("§8§m-----------------------------------------\n"
-              + "§a§lCONGRATS!\n "
+              + "§3§lCONGRATS!\n "
               + "§fYou killed your first §bMob §f!\n "
               + "§8§m-----------------------------------------");
       PlayerInventory inventory = player.getInventory();
       inventory.addItem(new ItemStack(Material.DIAMOND_SWORD));
       player.sendMessage("§8§m-----------------------------------------");
-      player.sendMessage("§a§lYou were given a Diamond Sword, check your Inventory!");
+      player.sendMessage("§3§lYou were given a Diamond Sword, check your Inventory!");
       player.sendMessage("§8§m-----------------------------------------");
     }
   }

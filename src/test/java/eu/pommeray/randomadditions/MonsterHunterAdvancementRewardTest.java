@@ -66,7 +66,7 @@ class MonsterHunterAdvancementRewardTest {
     // Register the message of the Monster Hunter Advancement
     String message = fakePlayer.nextMessage();
     assertEquals("§8§m-----------------------------------------\n"
-            + "§a§lCONGRATS!\n"
+            + "§3§lCONGRATS!\n"
             + " §fYou killed your first §bMob §f!\n"
             + " §8§m-----------------------------------------", message);
 

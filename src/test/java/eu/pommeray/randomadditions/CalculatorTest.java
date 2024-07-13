@@ -65,7 +65,7 @@ public class CalculatorTest {
     fakePlayer.nextMessage();
     String message = fakePlayer.nextMessage();
     assertEquals("The result of " + firstNumber
-         + " " + chosenOperation + " " + secondNumber + " is: " + expectedResult, message);
+         + " " + chosenOperation + " " + secondNumber + " is: §3" + expectedResult, message);
   }
 
   @Test
@@ -80,7 +80,7 @@ public class CalculatorTest {
     fakePlayer.nextMessage();
     String message = fakePlayer.nextMessage();
     assertEquals("The result of " + firstNumber
-          + " " + chosenOperation + " " + secondNumber + " is: " + expectedResult, message);
+          + " " + chosenOperation + " " + secondNumber + " is: §3" + expectedResult, message);
   }
 
   @Test
@@ -95,6 +95,6 @@ public class CalculatorTest {
     fakePlayer.nextMessage();
     String message = fakePlayer.nextMessage();
     assertEquals("The result of " + firstNumber
-        + " " + chosenOperation + " " + secondNumber + " is: " + expectedResult, message);
+        + " " + chosenOperation + " " + secondNumber + " is: §3" + expectedResult, message);
   }
 }

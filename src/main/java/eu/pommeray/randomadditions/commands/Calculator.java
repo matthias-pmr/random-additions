@@ -55,22 +55,22 @@ public class Calculator implements CommandExecutor {
       case "+": {
         int result = firstNumber + secondNumber;
         sender.sendMessage("The result of " + firstNumber
-                + " + " + secondNumber + " is: " + result);
+                + " + " + secondNumber + " is: §3" + result);
         break;
       }
       case "*": {
         int result = firstNumber * secondNumber;
         sender.sendMessage("The result of " + firstNumber
-                  + " * " + secondNumber + " is: " + result);
+                  + " * " + secondNumber + " is: §3" + result);
         break;
       }
       case "/": {
         if (secondNumber != 0) {
           double result = (double) firstNumber / secondNumber;
           sender.sendMessage("The result of " + firstNumber
-                      + " / " + secondNumber + " is: " + result);
+                      + " / " + secondNumber + " is: §3" + result);
         } else {
-          sender.sendMessage("The result of " + firstNumber
+          sender.sendMessage("§cThe result of " + firstNumber
                       + " / " + secondNumber + " is impossible to calculate");
         }
         break;
