@@ -88,7 +88,7 @@ public class CalculatorTest {
     int firstNumber = 15;
     int secondNumber = 5;
     String chosenOperation = "/";
-    String expectedResult = "3";
+    String expectedResult = "3.0";
     // Player issues an addition that should return the right result
     fakePlayer.performCommand("calculator 15 / 5");
     // Skip the first message sent by the console

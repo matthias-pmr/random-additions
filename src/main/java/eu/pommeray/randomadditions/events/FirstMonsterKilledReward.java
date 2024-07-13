@@ -28,9 +28,9 @@ public class FirstMonsterKilledReward implements Listener {
     if (name.equalsIgnoreCase("adventure/kill_a_mob")) {
       player.playNote(player.getLocation(), Instrument.PIANO, Note.natural(1, Note.Tone.A));
       player.playNote(player.getLocation(), Instrument.BASS_GUITAR, Note.natural(1, Note.Tone.A));
-      player.sendMessage("§8§m----------------------------------------- \n"
-              + "§a§lCONGRATS! \n "
-              + "§fYou killed your first §bMob §f! \n "
+      player.sendMessage("§8§m-----------------------------------------\n"
+              + "§a§lCONGRATS!\n "
+              + "§fYou killed your first §bMob §f!\n "
               + "§8§m-----------------------------------------");
       PlayerInventory inventory = player.getInventory();
       inventory.addItem(new ItemStack(Material.DIAMOND_SWORD));

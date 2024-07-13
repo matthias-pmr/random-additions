@@ -68,8 +68,8 @@ class PoisonousPotatoConsumptionRandomTeleportTest {
     fakePlayer.nextMessage();
     // Register the message of the Poisonous Potato Consumption
     String message = fakePlayer.nextMessage();
-    assertEquals("§8§m----------------------------------------- \n"
+    assertEquals("§8§m-----------------------------------------\n"
           + "§cYou ate a poisonous potato and got teleported!"
-          + "§8§m----------------------------------------- \n", message);
+          + "§8§m-----------------------------------------\n", message);
   }
 }

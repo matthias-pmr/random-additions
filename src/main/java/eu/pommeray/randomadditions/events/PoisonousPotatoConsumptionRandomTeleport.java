@@ -20,16 +20,18 @@ public class PoisonousPotatoConsumptionRandomTeleport implements Listener {
    */
   @EventHandler
   public void onItemConsumption(PlayerItemConsumeEvent event) {
+    Random random = new Random();
     if (event.getItem().getType() == Material.POISONOUS_POTATO) {
       Player player = event.getPlayer();
-      Random random = new Random();
-      int x = random.nextInt(1000) - 1000;
-      int z = random.nextInt(1000) - 1000;
-      int y = player.getWorld().getHighestBlockYAt(x, z);
+      int negativeOrPositive = random.nextInt(2) == 0 ? -1 : 1;
+      int x = random.nextInt(1000) * negativeOrPositive;
+      int z = random.nextInt(1000) * negativeOrPositive;
+      // Adding + 1 to the y coordinate to prevent the player from being stuck in the ground
+      int y = player.getWorld().getHighestBlockYAt(x, z) + 1;
       Location randomLocation = new Location(player.getWorld(), x, y, z);
-      player.sendMessage("§8§m----------------------------------------- \n"
+      player.sendMessage("§8§m-----------------------------------------\n"
               + "§cYou ate a poisonous potato and got teleported!"
-              + "§8§m----------------------------------------- \n");
+              + "§8§m-----------------------------------------\n");
       player.teleport(randomLocation);
     }
   }

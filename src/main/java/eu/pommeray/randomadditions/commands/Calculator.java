@@ -66,7 +66,7 @@ public class Calculator implements CommandExecutor {
       }
       case "/": {
         if (secondNumber != 0) {
-          int result = firstNumber / secondNumber;
+          double result = (double) firstNumber / secondNumber;
           sender.sendMessage("The result of " + firstNumber
                       + " / " + secondNumber + " is: " + result);
         } else {
