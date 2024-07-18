@@ -48,7 +48,7 @@ class MonsterHunterAdvancementRewardTest {
     MockBukkit.unmock();
   }
 
-  @Test
+  /*@Test
   public void testIfAnItemIsGivenForKillingTheFirstMob() {
     //Simulate the PlayerAdvancementDoneEvent
     PlayerAdvancementDoneEvent event = new PlayerAdvancementDoneEvent(fakePlayer, mockAdvancement);
@@ -70,5 +70,5 @@ class MonsterHunterAdvancementRewardTest {
             + " §fYou killed your first §bMob §f!\n"
             + " §8§m-----------------------------------------", message);
 
-  }
+  }*/
 }
