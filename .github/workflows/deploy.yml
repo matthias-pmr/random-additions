@@ -45,7 +45,7 @@ jobs:
 
       - name: Build Maven Site
         run: |
-          mvn clean site:deploy
+          mvn clean site
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
