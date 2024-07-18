@@ -45,7 +45,7 @@ jobs:
 
       - name: Build Maven Site
         run: |
-          mvn clean site
+          mvn clean site:deploy
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -58,4 +58,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/github-pages-deploy-action@v4
+        uses: actions/deploy-pages@v4
