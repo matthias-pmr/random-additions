@@ -17,6 +17,12 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
+      - run: mvn -B package --file pom.xml
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Package
+          path: target/
 
   test:
     runs-on: ubuntu-latest
@@ -37,7 +43,7 @@ jobs:
         with:
           name: Package
           path: staging
-      - run: mvn -e --batch-mode --update-snapshots verify
+      - run: mvn -e --batch-mode --update-snapshots verify jacoco:report
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4

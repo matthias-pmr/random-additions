@@ -28,6 +28,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    needs: test
 
     steps:
       - name: Checkout
@@ -40,9 +41,9 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Build Maven Site including JaCoCo report
+      - name: Build Maven Site
         run: |
-          mvn clean verify jacoco:report site
+          mvn clean site
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -56,5 +57,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          build-directory: './target/site/'
